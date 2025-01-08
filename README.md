@@ -32,7 +32,11 @@ git clone https://github.com/your-username/battleship.git
 
 ## Gameplay
 
-(Include screenshots if you have a visual interface or examples of the game in action)
+
+
+https://github.com/user-attachments/assets/c14a0f7d-17f2-411a-a0c0-99c3218f1d0f
+
+
 
 ### Authors
 
