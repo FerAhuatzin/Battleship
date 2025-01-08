@@ -48,6 +48,7 @@ public class Interface implements MouseListener{
     Game game;
     Player player1;
     Player player2;
+    Font baseFont;
     Font fontForLabels;
     Font fontForSmallText;
     Font fontForSmallInstructions;
@@ -60,10 +61,19 @@ public class Interface implements MouseListener{
 
         placingVertical = true;
 
-        fontForLabels = new Font("Minecraft", Font.PLAIN, 80);
-        fontForSmallText = new Font("Minecraft", Font.PLAIN, 40);
-        fontForSmallInstructions = new Font("Minecraft", Font.PLAIN, 35);
-        fontForMiniInstructions = new Font("Minecraft", Font.PLAIN, 20);
+        try {
+            baseFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/Fonts/Minecraft.ttf"));
+
+            fontForLabels = baseFont.deriveFont(Font.PLAIN, 80);
+            fontForSmallText = baseFont.deriveFont(Font.PLAIN, 40);
+            fontForSmallInstructions = baseFont.deriveFont(Font.PLAIN, 35);
+            fontForMiniInstructions = baseFont.deriveFont(Font.PLAIN, 20);
+
+        } catch (FontFormatException e) {
+            System.err.println("El archivo de fuente tiene un formato inválido: " + e.getMessage());
+        } catch (IOException e) {
+            System.err.println("Error al cargar el archivo de fuente: " + e.getMessage());
+        }
 
         darkBlue = new Color(18,123,153,255);
         lightBlue = new Color(26,180,224,255);
